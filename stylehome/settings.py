@@ -59,6 +59,11 @@ LOCAL_APPS = [
     # Here you can add your apps from stylehome.apps
     'stylehome.apps.home',
     'stylehome.apps.shop',
+    'stylehome.apps.service',
+    'stylehome.apps.about',
+    'stylehome.apps.blog',
+    'stylehome.apps.contact',
+    'stylehome.apps.cart',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -151,7 +156,6 @@ STATICFILES_DIRS = [
     os.path.join(APPS_DIR, 'static'),  # Adjust this if needed
 ]
 
-print(STATICFILES_DIRS)
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
