@@ -1,91 +1,90 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>StyleHome | {% block title %}{% endblock title %}</title>
-        <meta name="author" content="Untree.co">
-        <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 
-        <meta name="description" content="" />
-        <meta name="keywords" content="bootstrap, bootstrap4" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>StyleHome | {% block title %}{% endblock title %}</title>
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="{% static 'core/css/tiny-slider.css' %}" rel="stylesheet">
-		<link href="{% static 'core/css/style.css' %}" rel="stylesheet">
-		{% block extra_css %}
-			<!-- Your stuff: Third-party CSS libraries go here -->
-      		<!-- This file stores project-specific CSS -->
-		{% endblock extra_css %}
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
 
-		{% block extra_javascript %}
-			<!-- Your stuff: Third-party javascript libraries go here -->
-      		<!-- place project specific Javascript in this file -->
-		{% endblock extra_javascript %}
-		
-	</head>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="{% static 'core/css/tiny-slider.css' %}" rel="stylesheet">
+	<link href="{% static 'core/css/style.css' %}" rel="stylesheet">
+	{% block extra_css %}
+	<!-- Your stuff: Third-party CSS libraries go here -->
+	<!-- This file stores project-specific CSS -->
+	{% endblock extra_css %}
 
-	<body>
+	{% block extra_javascript %}
+	<!-- Your stuff: Third-party javascript libraries go here -->
+	<!-- place project specific Javascript in this file -->
+	{% endblock extra_javascript %}
 
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+</head>
 
-			<div class="container">
-				<a class="navbar-brand" href="#">Style Home<span>.</span></a>
+<body>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+	<!-- Start Header/Navigation -->
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="{% if request.path == '/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'home' %}">Home</a>
-						</li>
-						<li class="{% if request.path == '/shop/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'shop' %}">Shop</a>
-						</li>
-						<li class="{% if request.path == '/about/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'about' %}">About us</a>
-						</li>
-						<li class="{% if request.path == '/service/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'service' %}">Services</a>
-						</li>
-						<li class="{% if request.path == '/blog/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'blog' %}">Blog</a>
-						</li>
-						<li class="{% if request.path == '/contact/' %}nav-item active{% endif %}">
-							<a class="nav-link" href="{% url 'contact' %}">Contact us</a>
-						</li>
-					</ul>
+		<div class="container">
+			<a class="navbar-brand" href="#">Style Home<span>.</span></a>
 
-					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="{% url 'login' %}"><img src="{% static 'images/user.svg' %}"></a></li>
-						<li><a class="nav-link" href="{% url 'cart' %}"><img src="{% static 'images/cart.svg' %}"></a></li>
-					</ul>
-				</div>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
+				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="{% if request.path == '/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'home' %}">Home</a>
+					</li>
+					<li class="{% if request.path == '/shop/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'shop' %}">Shop</a>
+					</li>
+					<li class="{% if request.path == '/about/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'about' %}">About us</a>
+					</li>
+					<li class="{% if request.path == '/service/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'service' %}">Services</a>
+					</li>
+					<li class="{% if request.path == '/blog/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+					</li>
+					<li class="{% if request.path == '/contact/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+					</li>
+				</ul>
+
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li><a class="nav-link" href="{% url 'login' %}"><img src="{% static 'images/user.svg' %}"></a></li>
+					<li><a class="nav-link" href="{% url 'cart' %}"><img src="{% static 'images/cart.svg' %}"></a></li>
+				</ul>
 			</div>
-				
-		</nav>
-		<!-- End Header/Navigation -->
+		</div>
 
-		{% block content %}
+	</nav>
+	<!-- End Header/Navigation -->
 
-        {% endblock content %}
+	{% block content %}
 
-		
+	{% endblock content %}
 
-
-		<script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
-		<script src="{% static 'core/js/tiny-slider.js' %}"></script>
-		<script src="{% static 'core/js/custom.js' %}"></script>
-		{% block inline_javascript %}
-			<!-- Script tags with only code, no src (defer by default). To run
+	<script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
+	<script src="{% static 'core/js/tiny-slider.js' %}"></script>
+	<script src="{% static 'core/js/custom.js' %}"></script>
+	{% block inline_javascript %}
+	<!-- Script tags with only code, no src (defer by default). To run
 			with a "defer" so that you run inline code: -->
-		{% endblock inline_javascript %}
-	</body>
+	{% endblock inline_javascript %}
+</body>
 
 </html>
