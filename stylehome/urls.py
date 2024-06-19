@@ -28,4 +28,5 @@ urlpatterns = [
     path('', include('stylehome.apps.blog.urls')),
     path('', include('stylehome.apps.contact.urls')),
     path('', include('stylehome.apps.cart.urls')),
+    path('', include('stylehome.apps.client.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

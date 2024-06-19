@@ -64,6 +64,7 @@ LOCAL_APPS = [
     'stylehome.apps.blog',
     'stylehome.apps.contact',
     'stylehome.apps.cart',
+    'stylehome.apps.client',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
