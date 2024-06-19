@@ -7,15 +7,14 @@ Login
 {% endblock title %}
 
 {% block content %}
-
-<section class="vh-100" style="background-color: #b5d6bc;">
-  <div class="container py-5 h-100">
+<section class="p-5">
+  <div class="container">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-xl-10">
         <div class="card" style="border-radius: 1rem;">
           <div class="row g-0">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://www.elmueble.com/medio/2018/04/27/00455435_481d6ef1_1563x2000.jpg" alt="login form"
+              <img src="{% static 'images/login-img.jpg' %}" alt="login form"
                 class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 665px;" />
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -24,7 +23,7 @@ Login
                 <form>
 
                   <div class="d-flex align-items-center mb-3 pb-1">
-                    <i class="fas fa-cubes fa-2x me-3" style="color: #a0eead;"></i>
+                    <i class="fas fa-cubes fa-2x me-3"></i>
                     <span class="h1 fw-bold mb-0">StyleHome</span>
                   </div>
 
