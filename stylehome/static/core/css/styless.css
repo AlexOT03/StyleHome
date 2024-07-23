@@ -1,4 +1,6 @@
 /*
+Estilos orginilaes de la plantilla,por si se desea volver desde el punto en que se tenia construida la plantilla, por lo tanto es para estar al tanto de ella --
+--------------------------------
 * Template Name: UntreeStore
 * Template Author: Untree.co
 * Author URI: https://untree.co/
@@ -33,24 +35,9 @@ a {
 .custom-navbar {
   background: #BDCDD0 !important;
   padding-top: 20px;
-  padding-bottom: 5px; }
-
-.line {
-    width: 100%;
-    height: 1px;
-    background: #BDCDD0 !important;
-}
-.line .lineblack {
-    margin-top: 5px;
-    margin: auto;
-    width: 92%;
-    height: 1px !important;
-    background-color: black;
-}
-
+  padding-bottom: 20px; }
   .custom-navbar .navbar-brand {
-    font-size: 30px;
-    color: #323334;
+    font-size: 32px;
     font-weight: 600; }
     .custom-navbar .navbar-brand > span {
       opacity: .4; }
@@ -66,7 +53,7 @@ a {
       margin-right: 15px; } }
   .custom-navbar .custom-navbar-nav li a {
     font-weight: 500;
-    color: #323334 !important;
+    color: #ffffff !important;
     opacity: .5;
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -111,7 +98,7 @@ a {
         margin-right: 20px; }
 
 .hero {
-  background: #BDCDD0;
+  background: #3b5d50;
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {
@@ -121,16 +108,14 @@ a {
       padding: calc(8rem - 30px) 0 8rem 0; } }
   .hero .intro-excerpt {
     position: relative;
-    margin-top: 50px;
     z-index: 4; }
     @media (min-width: 992px) {
       .hero .intro-excerpt {
         max-width: 450px; } }
   .hero h1 {
     font-weight: 700;
-    font-size: 36px;
-    color: black;
-    margin-bottom: 20px; }
+    color: #ffffff;
+    margin-bottom: 30px; }
     @media (min-width: 1400px) {
       .hero h1 {
         font-size: 54px; } }
@@ -144,8 +129,7 @@ a {
       top: 0px;
       right: 0px;
       z-index: 2;
-      /*max-width: 780px;*/
-      max-width: 580px;
+      max-width: 780px;
       left: -20px; }
       @media (min-width: 768px) {
         .hero .hero-img-wrap img {
@@ -553,7 +537,8 @@ a {
     opacity: .7; }
 
 .footer-section {
-  background-color: #8BA6AC; }
+  padding: 80px 0;
+  background: #ffffff; }
   .footer-section .relative {
     position: relative; }
   .footer-section a {
@@ -576,7 +561,7 @@ a {
     .footer-section .subscription-form h3 {
       font-size: 18px;
       font-weight: 500;
-      color: #323334; }
+      color: #3b5d50; }
     .footer-section .subscription-form .form-control {
       height: 50px;
       border-radius: 10px;

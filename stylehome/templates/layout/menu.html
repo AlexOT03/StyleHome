@@ -11,6 +11,8 @@
 
 	<meta name="description" content="" />
 	<meta name="keywords" content="bootstrap, bootstrap4" />
+    <!---new css to modify the style-->
+    <link rel="stylesheet" href="{% static 'core/css/librery.css' %}" type="text/css">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
@@ -35,7 +37,7 @@
 	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
 
 		<div class="container">
-			<a class="navbar-brand" href="#">Style Home<span>.</span></a>
+			<a class="navbar-brand" href="#">Style Home.<span></span></a>
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
 				aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,23 +57,26 @@
 					</li>
 					<!--<li class="{% if request.path == '/service/' %}nav-item active{% endif %}">
 						<a class="nav-link" href="{% url 'service' %}">Services</a>
-					</li>-->
-					<li class="{% if request.path == '/blog/' %}nav-item active{% endif %}">
-						<a class="nav-link" href="{% url 'blog' %}">Blog</a>
 					</li>
+					<li class="{% if request.path == '/blog/' %}nav-item active{% endif %}">
+						<a class="nav-link" href="{% url 'blog' %}">We</a>
+					</li>-->
 					<li class="{% if request.path == '/contact/' %}nav-item active{% endif %}">
 						<a class="nav-link" href="{% url 'contact' %}">Contact us</a>
 					</li>
 				</ul>
 
 				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-					<li><a class="nav-link" href="{% url 'login' %}"><img src="{% static 'images/user.svg' %}"></a></li>
-					<li><a class="nav-link" href="{% url 'cart' %}"><img src="{% static 'images/cart.svg' %}"></a></li>
+					<li><a class="nav-link" href="{% url 'login' %}"><img src="{% static 'core/icons/user.png' %}"></a></li>
+					<li><a class="nav-link" href="{% url 'cart' %}"><img src="{% static 'core/icons/shop.png' %}"></a></li>
 				</ul>
 			</div>
 		</div>
-
 	</nav>
+	<div class="line"> 
+		<div class="lineblack"></div>
+	</div>
+    
 	<!-- End Header/Navigation -->
 
 	{% block content %}

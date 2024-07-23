@@ -1,0 +1,50 @@
+/*
+Este archivo es para crear clases que modifique la estructura de los templates para llegar a igualar el mismo diseño del figma
+*/
+
+/*clases de colores que se usan en la paleta*/
+.bg_footer{
+    background-color: #8BA6AC;
+}
+.line_footer{
+    padding-top: 20px;
+    padding-bottom: 6px;
+    text-align: center;
+    background-color: #222222;
+    color: white;
+}
+.bold{
+    text-decoration: double !important;
+    color: black !important;
+}
+.BanerColor{
+    background-color:#BDCDD0; ;
+}
+.BanerBgColor{
+    color:#BDCDD0;
+}
+.bgwhite{
+    background-color:white;
+    padding: 30px 0 0 100px ;
+    margin-bottom: 30px;
+}
+.colorfont{
+    color:#A86A3D;
+}
+
+
+/*Estilos de hero en la etiqueta h2 del banner*/
+.font30{
+    font-weight: 700;
+    font-size:64px;
+    text-decoration:double;
+}
+
+
+
+/*Estilos del footer que fueron necesarios*/
+.desc{
+    font-size: 14px;
+    margin-bottom: 20px;
+    color:black;
+}
