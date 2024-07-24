@@ -48,3 +48,150 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     margin-bottom: 20px;
     color:black;
 }
+
+/*Estilos para el template de home.html*/
+
+.content-category{
+    width: 100%;
+    padding: 20px 40px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: -40px;
+}.content-category .cart{
+    width: 48%;
+    background-color: #EAE9E7;
+    height: 250px;
+    position: relative;
+}
+.content-category .cart .imgs{
+    margin-top: 30px;
+    padding-left: 10px;
+}
+.content-category .cart .imgs img{
+    width: 50%;
+    height: 50%;
+    object-fit:contain;
+    
+}.content-category .cart .float{
+    position: absolute;
+    top:80px;
+    left: 60%;
+    right:10px;
+}
+.content-category .cart .float h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.content-category .cart .float a{
+    text-decoration: none;
+    color:black;
+    font-size: 12px;
+    padding: 5px 10px;
+    border:1px solid black;
+}
+
+
+
+/*section products*/
+.product-section .selected-item {
+    position: relative;
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    height: auto;
+    border-radius: 10px;
+    bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding-bottom: 50px; }
+    .product-section .selected-item .product-thumbnail {
+      margin-bottom: 30px;
+      position: relative;
+      top: -25px;
+      -webkit-transition: .3s all ease;
+      -o-transition: .3s all ease;
+      transition: .3s all ease; }
+    .product-section .selected-item h3 {
+      font-weight: 600;
+      font-size: 16px; }
+      .product-section .selected-item .little-desc{
+        padding: 5px 20px;
+        font-size: 9px;
+        color: white;
+        text-align: center;
+      }
+    .product-section .selected-item strong {
+      font-weight: 800 !important;
+      font-size: 18px !important; }
+    .product-section .selected-item h3, .product-section .selected-item strong {
+      color: white;
+      text-decoration: none; }
+    .product-section .selected-item .icon-cross {
+      position: absolute;
+      width: 85px;
+      height: 30px;
+      display: inline-block;
+      border: 1px solid white;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      bottom: 15px;
+}   
+.product-section .selected-item .icon-cross a{
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    cursor: pointer;
+}
+.product-section .selected-item .icon-cross img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+
+
+    /*Section banner finish*/
+
+.content-img{
+    margin-top: -30px;
+    width: 100%;
+    height: 300px;
+    position: relative;
+}.content-img img{
+    width: 100%;
+    height: 100%;
+}.content-img .block{
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    width: 320px;
+    height: 200px;
+    padding: 30px 40px;
+    background-color: rgba(229, 230, 201, 0.9);
+}.content-img .block .title{
+    font-size: 16px;
+}.content-img .block h4{
+    font-size: 13px;
+    color:#7B5136;
+}.content-img .block .selt{
+    font-size: 10px;
+    color:#7B5136;
+    text-decoration: line-through;
+}
+.content-img .block p{
+    font-size: 8px;
+    color:black;
+}
+.content-img .block a{
+    text-decoration: none;
+    color:black;
+    font-size: 12px;
+    padding: 5px 10px;
+    border:1px solid black;
+}
+
