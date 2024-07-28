@@ -7,7 +7,7 @@ Shop
 {% endblock title %}
 
 {% block content %}
-<!-- Start Hero Section -->
+<!-- Start Hero Section --
 <div class="hero">
 	<div class="container">
 		<div class="row justify-content-between">
@@ -22,33 +22,85 @@ Shop
 		</div>
 	</div>
 </div>
-<!-- End Hero Section -->
+-- End Hero Section -->
 
 
 
 <div class="untree_co-section product-section before-footer-section">
-	<div class="container">
-		<div class="row">
+	<div class="content-products">
+		<div class="search">
+			<div class="head-search">
+				<h3>Busca lo que deseas</h3>
+			</div>
+			<div class="content-forms">
+				<form action="" method="post" class="search-form">
+				  <div class="first-section">
+					<h4>¿Cuál color?</h4>
+					<div class="items-colors">
+					  <input type="checkbox" id="red" name="color" value="rojo">
+					  <label for="red" class="color-label" style="background-color: red;"></label>
+			  
+					  <input type="checkbox" id="blue" name="color" value="azul">
+					  <label for="blue" class="color-label" style="background-color: blue;"></label>
+			  
+					  <input type="checkbox" id="mahogany" name="color" value="caoba">
+					  <label for="mahogany" class="color-label" style="background-color: #C04000;"></label>
+			  
+					  <input type="checkbox" id="brown" name="color" value="cafe">
+					  <label for="brown" class="color-label" style="background-color: brown;"></label>
+					</div>
+				  </div>
+				  <div class="second-section">
+					<h4>¿Cuál categoría?</h4>
+					<div class="items-category">
+					  <div class="item-cat">
+						<input type="checkbox" id="sala" name="category" value="sala">
+					  	<label for="sala" class="category-label">Sala</label>
+					  </div>
+			  
+					  <div class="item-cat">
+						<input type="checkbox" id="Comedor" name="category" value="Comedor">
+					  	<label for="Comedor" class="category-label">Comedor</label>
+					  </div>
+			  
+					  <div class="item-cat">
+						<input type="checkbox" id="cocina" name="category" value="cocina">
+					  	<label for="cocina" class="category-label">cocina</label>
+					  </div>
+			  
+					  <div class="item-cat">
+						<input type="checkbox" id="Habitacion" name="category" value="Habitacion">
+					  	<label for="Habitacion" class="category-label">Habitacion</label>
+					  </div>
+					</div>
+				  </div>
+				</form>
+			  </div>
+			  
+			  
+		</div>
+
+		<div class="list-product">
 
 			<!-- Start Column 1 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
-				<a class="product-item" href="#">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
+				<div class="product-item">
 					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Nordic Chair</h3>
+					<h3 class="product-title paddings">Nordic Chair</h3>
 					<strong class="product-price">$50.00</strong>
 
 					<span class="icon-cross">
 						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
 					</span>
-				</a>
+				</div>
 			</div>
 			<!-- End Column 1 -->
 
 			<!-- Start Column 2 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-1.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Nordic Chair</h3>
+					<h3 class="product-title paddings">Nordic Chair</h3>
 					<strong class="product-price">$50.00</strong>
 
 					<span class="icon-cross">
@@ -59,10 +111,10 @@ Shop
 			<!-- End Column 2 -->
 
 			<!-- Start Column 3 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-2.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Kruzo Aero Chair</h3>
+					<h3 class="product-title paddings">Kruzo Aero Chair</h3>
 					<strong class="product-price">$78.00</strong>
 
 					<span class="icon-cross">
@@ -73,10 +125,10 @@ Shop
 			<!-- End Column 3 -->
 
 			<!-- Start Column 4 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Ergonomic Chair</h3>
+					<h3 class="product-title paddings">Ergonomic Chair</h3>
 					<strong class="product-price">$43.00</strong>
 
 					<span class="icon-cross">
@@ -88,10 +140,10 @@ Shop
 
 
 			<!-- Start Column 1 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Nordic Chair</h3>
+					<h3 class="product-title paddings">Nordic Chair</h3>
 					<strong class="product-price">$50.00</strong>
 
 					<span class="icon-cross">
@@ -102,10 +154,10 @@ Shop
 			<!-- End Column 1 -->
 
 			<!-- Start Column 2 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-1.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Nordic Chair</h3>
+					<h3 class="product-title paddings">Nordic Chair</h3>
 					<strong class="product-price">$50.00</strong>
 
 					<span class="icon-cross">
@@ -116,10 +168,10 @@ Shop
 			<!-- End Column 2 -->
 
 			<!-- Start Column 3 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-2.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Kruzo Aero Chair</h3>
+					<h3 class="product-title paddings">Kruzo Aero Chair</h3>
 					<strong class="product-price">$78.00</strong>
 
 					<span class="icon-cross">
@@ -130,10 +182,10 @@ Shop
 			<!-- End Column 3 -->
 
 			<!-- Start Column 4 -->
-			<div class="col-12 col-md-4 col-lg-3 mb-5">
+			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
 				<a class="product-item" href="#">
 					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title">Ergonomic Chair</h3>
+					<h3 class="product-title paddings">Ergonomic Chair</h3>
 					<strong class="product-price">$43.00</strong>
 
 					<span class="icon-cross">

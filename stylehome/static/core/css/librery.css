@@ -98,7 +98,7 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 .product-section .selected-item {
     position: relative;
     content: "";
-    background: rgba(0, 0, 0, 0.4);
+    background: #FAFAFA;
     height: auto;
     border-radius: 10px;
     bottom: 0;
@@ -106,6 +106,10 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     text-decoration: none;
     display: block;
     padding-bottom: 50px; }
+    .product-section .selected-item:hover{
+        background: rgba(0, 0, 0, 0.4); 
+        color: white;
+    }
     .product-section .selected-item .product-thumbnail {
       margin-bottom: 30px;
       position: relative;
@@ -119,8 +123,11 @@ Este archivo es para crear clases que modifique la estructura de los templates p
       .product-section .selected-item .little-desc{
         padding: 5px 20px;
         font-size: 9px;
+        display: none;
         color: white;
         text-align: center;
+      }.product-section .selected-item .little-desc:hover{
+        display: block;
       }
     .product-section .selected-item strong {
       font-weight: 800 !important;
@@ -193,5 +200,107 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     font-size: 12px;
     padding: 5px 10px;
     border:1px solid black;
+}
+
+/**Diseño del template de shop.html */
+
+
+.content-products{
+    margin-top: -80px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}.content-products .search{
+    width:20%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    background-color: #EAE9E7;
+}.content-products .search .head-search{
+    height: auto;
+    color: black;
+    text-align: center;
+    padding: 15px 0;
+}.content-products .search .head-search h3{
+    font-size: 16px;
+}
+.content-products .search .content-forms{
+    margin-top: 10px;
+    height: auto;
+    padding: 10px 20px;
+}.content-products .search .content-forms .search-form{
+    height: auto;
+    display: inline-block;
+    width: 100%;
+}.content-products .search .content-forms .search-form .first-section,.second-section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid black;
+}.content-products .search .content-forms .search-form .first-section h4,.second-section h4{
+    font-size: 14px;
+    color:black;
+    margin: auto;
+    padding: 10px 0;
+}.content-products .search .content-forms .search-form .first-section .items-colors,.second-section .items-category{
+    width: 100%;
+    margin: auto;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #fafafa91;
+}
+
+.items-colors input[type="checkbox"] {
+    display: none;
+  }
+  
+  .color-label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+  }
+  
+  .items-colors input[type="checkbox"]:checked + .color-label {
+    border-color: #000;
+  }
+  
+  .items-category {
+    display:flex;
+    flex-direction: column;
+    padding: 10px 20px;  
+  }
+  .items-category .item-cat{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .items-category input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  .items-category input[type="checkbox"]:checked + .category-label{
+    color:red;
+  }
+
+
+.content-products .list-product{
+    width: 75%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}.content-products .list-product .paddings{
+    margin-right: 5px;
+    padding-top: 15px;
 }
 
