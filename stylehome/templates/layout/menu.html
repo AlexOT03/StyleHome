@@ -90,6 +90,29 @@
 	<!-- Script tags with only code, no src (defer by default). To run
 			with a "defer" so that you run inline code: -->
 	{% endblock inline_javascript %}
+	<script>
+		if (document.startViewTransition) {
+			window.navigation.addEventListener('navigate', (event) => {
+				const toUrl = new URL(event.destination.url)
+		
+				if (location.origin !== toUrl.origin) return
+		
+				event.intercept({
+					async handler () {
+						const response = await fetch(toUrl.pathname)
+						const text = await response.text()
+						const [, data] = text.match(/<body>([\s\S]*)<\/body>/i)
+		
+						// View Transition API
+						document.startViewTransition(() => {
+							document.body.innerHTML = data
+							document.documentElement.scrollTop = 0
+						})
+					}
+				})
+			})
+		}
+	</script>
 </body>
 
 </html>
