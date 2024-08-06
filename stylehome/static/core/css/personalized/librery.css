@@ -50,8 +50,78 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 }
 
 /*Estilos para el template de home.html*/
-
 .content-category{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 24px;
+    padding: 20px 12px;
+    margin-left: 60px;
+    margin-right: 60px;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .content-category {
+      flex-direction: column;
+      gap: 0;
+      padding: 0 10px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+    
+}
+
+.card-category {
+    position: relative;
+    width: 636px;
+    height: 368px;
+    padding: 10px 0 10px 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .card-category {
+      width: 100%;
+  }
+}
+
+.card-category img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 60%;
+}
+
+.float-text{
+    position: absolute;
+    top: 40%;
+    bottom: 50%;
+    right: 10%;
+    width: 40%;
+    height: 100px;
+}
+
+.btn-black-outline {
+    background: transparent;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.3);
+    color: black;
+    font-size: 12px;
+    transition: transform .2s;
+    padding: 5px 10px;
+    border:1px solid black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn-black-outline:hover {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    transform: scale(1.5); 
+}
+
+/* .content-category{
     width: 100%;
     padding: 20px 40px;
     height: auto;
@@ -59,7 +129,8 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: -40px;
-}.content-category .cart{
+}
+.content-category .cart{
     width: 48%;
     background-color: #EAE9E7;
     height: 250px;
@@ -90,12 +161,52 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     font-size: 12px;
     padding: 5px 10px;
     border:1px solid black;
-}
+} */
 
 
 
 /*section products*/
-.product-section .selected-item {
+.product-section {
+    padding: 20px 12px !important;
+    margin: auto 60px;
+}
+
+.card-item {
+    position: relative;
+    padding: 0;
+    margin: 20px;
+    width: 306px !important;
+    height: 422px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-item img {
+    position: absolute;
+    top: 0;
+    width: 306px !important;
+    height: 422px !important;
+}
+
+.card-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: .5s;
+}
+
+.card-item:hover .card-content {
+    opacity: 1;
+}
+
+/* .product-section .selected-item {
     position: relative;
     content: "";
     background: #FAFAFA;
@@ -159,12 +270,55 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%); } */
 
 
-    /*Section banner finish*/
+/*Section banner finish*/
 
-.content-img{
+.pre-footer-section {
+    position: relative;
+    background-color: #8BA6AC;
+    width: 100%;
+    height: 510px;
+    box-sizing: border-box;
+}
+
+.pre-footer-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pre-footer-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    opacity: 0.8;
+    height: 338px;
+    width: 545px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .pre-footer-article {
+      width: 100%;
+      height: auto;
+      padding: 30px  0;
+      margin: 0;
+      margin-left: auto;
+      margin-right: auto;
+  }
+    
+}
+
+/* .content-img{
     margin-top: -30px;
     width: 100%;
     height: 300px;
@@ -200,7 +354,7 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     font-size: 12px;
     padding: 5px 10px;
     border:1px solid black;
-}
+} */
 
 /**Diseño del template de shop.html */
 
