@@ -1,4 +1,4 @@
-{% extends 'layout/menu.html' %}
+{% extends 'layout/base.html' %}
 {% load static %}
 {% load i18n %}
 
@@ -6,9 +6,9 @@
 Profile
 {% endblock title %}
 
-{% block head %}
-<link rel="stylesheet" type="text/css" href="{% static 'core/css/profile.css' %}">
-{% endblock head %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'core/css/personalized/profile.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
 

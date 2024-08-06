@@ -6,13 +6,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>StyleHome | {% block title %}{% endblock title %}</title>
-	<meta name="author" content="Untree.co">
+	<!-- Primary Meta Tags -->
+	<meta name="title" content="StyleHome" />
+	<meta name="description" content="Sitio web dedicado a la venta de muebles para el hogar" />
+	<meta name="author" content="StyleHome Team">
 	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 
 	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap4" />
     <!---new css to modify the style-->
-    <link rel="stylesheet" href="{% static 'core/css/librery.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/personalized/librery.css' %}" type="text/css">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.min.css' %}">
@@ -29,6 +31,17 @@
 	<!-- place project specific Javascript in this file -->
 	{% endblock extra_javascript %}
 
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="" />
+	<meta property="og:title" content="StyleHome" />
+	<meta property="og:description" content="Sitio web dedicado a la venta de muebles para el hogar" />
+	
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="" />
+	<meta property="twitter:title" content="StyleHome" />
+	<meta property="twitter:description" content="Sitio web dedicado a la venta de muebles para el hogar" />
 </head>
 
 <body>
