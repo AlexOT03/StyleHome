@@ -7,8 +7,12 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     background-color: #8BA6AC;
 }
 .line_footer{
-    padding-top: 20px;
-    padding-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
     text-align: center;
     background-color: #222222;
     color: white;
@@ -458,3 +462,6 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     padding-top: 15px;
 }
 
+.subscription-form {
+    padding: 50px 62px;
+}

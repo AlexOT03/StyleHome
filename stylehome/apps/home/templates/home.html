@@ -129,12 +129,35 @@ Home
 	<img src="{% static 'images/cama.png' %}" alt="">
 	<article class="pre-footer-article">
 		<div>
-			<h3>Vestidores de cama</h3>
-			<h4>$150.00<span><h3>$220.00</h3></span></h4>
+			<p><h3>Vestidores de cama</h3></p>
+			<span class="fs-4"><strong>$150.00</strong></span><span class="fs-6 ms-4">$220.00</span>
 			<p>Mejores modelos y detalles en los mejores precios</p>
 			<a href="#">Ver detalles</a>
 		</div>
 	</article>
+</section>
+
+<section class="subscription-form">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6">
+				<p class="mb-0 fs-5"><strong>Regístrate para conocer mas</strong></p>
+				<span>Suscríbete a nuestra familia para conocer más promociones</span>
+			</div>
+			<div class="col-12 col-sm-6">
+				<form action="#" class="row">
+					<div class="col-12 col-sm-10  p-0 m-0">
+						<input type="email" class="form-control" placeholder="Compártenos tu email">
+					</div>
+					<div class="col-12 col-sm-2  p-0 m-0">
+						<button class="btn btn-primary">
+							<span class="fa fa-paper-plane"></span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 </section>
 
 {% include 'layout/footer.html' %}
