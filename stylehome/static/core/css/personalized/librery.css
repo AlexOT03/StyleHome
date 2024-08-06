@@ -175,7 +175,77 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     margin: auto 60px;
 }
 
-.card-item {
+.card-item{
+    position: relative;
+    width: 280px;
+    height: 420px;
+    box-sizing: border-box;
+}
+
+.card-item .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    overflow: hidden;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.card-item .front {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.card-item .front img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background-color: #EAE9E7;
+    padding: 10px 0;
+    border-radius: 10px;
+}
+
+.card-item .card-data {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.card-item .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 45px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-item .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card-item .back .card-link {
+    border-top: solid 1px white;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card-item .back .card-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.card-item:hover .front {
+     transform: perspective(600px) rotateY(180deg);
+}
+
+.card-item:hover .back {
+     transform: perspective(600px) rotateY(360deg);
+}
+
+/* .card-item {
     position: relative;
     padding: 0;
     margin: 20px;
@@ -208,7 +278,7 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 
 .card-item:hover .card-content {
     opacity: 1;
-}
+} */
 
 /* .product-section .selected-item {
     position: relative;
