@@ -62,7 +62,13 @@ Shop
 		</form>
 	</aside>
 	<article>
-		<h2 class="mb-5">Productos</h2>
+		<h2 class="mb-5">
+			{% if selected_category %}
+				{{ selected_category }}
+			{% else %}
+				Todos los productos
+			{% endif %}
+		</h2>
 		<div class="row">
 			{% for product in products %}
 			<div class="col-12 col-md-4 col-lg-3 mb-3">
@@ -74,7 +80,7 @@ Shop
 					{% endif %}
 					<div class="info pt-3">
 						<h4>{{ product.name }}</h4>
-						<span>{{ product.color_id.name }}</span>
+						<i class="fa-solid fa-list"></i> <span>{{ product.category_id.name }}</span> | <i class="fa-solid fa-palette"></i> <span>{{ product.color_id.name }}</span>
 						<p>${{ product.price }}</p>
 					</div>
 				</a>

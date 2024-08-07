@@ -40,5 +40,6 @@ class ProductDetailView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         product = Product.objects.get(pk=self.kwargs['pk'])
+        context['similar_products'] = Product.objects.filter(category_id=product.category_id).exclude(id=product.id)
         context['product'] = product
         return context
