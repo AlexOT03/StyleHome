@@ -26,7 +26,7 @@ class User(models.Model):
     )
     
     type_user = models.CharField(choices=WORK_CHOICES, max_length=50, blank=True, default='Cliente')
-    municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE)
+    municipality = models.ForeignKey(Municipality, on_delete=models.CASCADE, blank=True, null=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(validators=[EmailValidator()], unique=True, max_length=50)

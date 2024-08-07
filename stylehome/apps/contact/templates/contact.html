@@ -7,6 +7,24 @@ Contact Us
 {% endblock title %}
 
 {% block content %}
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+       emailjs.init("SxNpkTHnn9ytDYeS2"); // Reemplaza con tu ID de usuario de EmailJS
+    })();
+    
+    function sendEmail(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_q2sut59', 'template_yr704nj', '#contact-form')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert("Message sent successfully!");
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("Failed to send the message.");
+        });
+    }
+  </script>
 
 <!-- Start Contact Form -->
 <div class="untree_co-section">
@@ -68,29 +86,29 @@ Contact Us
             </div>
           </div>
 
-          <form>
+          <form id="contact-form" onsubmit="sendEmail(event)">
             <div class="row">
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="fname">First name</label>
-                  <input type="text" class="form-control" id="fname">
+                  <label for="fname">First name</label>
+                  <input type="text" class="form-control" id="fname" name="from_name" required>
                 </div>
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <label class="text-black" for="lname">Last name</label>
-                  <input type="text" class="form-control" id="lname">
+                  <label for="lname">Last name</label>
+                  <input type="text" class="form-control" id="lname" name="last_name" required>
                 </div>
               </div>
             </div>
             <div class="form-group">
-              <label class="text-black" for="email">Email address</label>
-              <input type="email" class="form-control" id="email">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="from_email" required>
             </div>
 
             <div class="form-group mb-5">
-              <label class="text-black" for="message">Message</label>
-              <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
+              <label for="message">Message</label>
+              <textarea name="message" class="form-control" id="message" cols="30" rows="5" required></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
