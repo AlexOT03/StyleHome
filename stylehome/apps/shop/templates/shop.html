@@ -38,7 +38,7 @@ Shop
 				<span><strong>Color</strong></span>
 				<div class="color-options">
 					{% for color in colors %}
-						<div class="color-box" style="background-color: {{ color.name }};"></div>
+						<div class="color-box" style="background-color: {{ color.hex_code }};"></div>
 					{% endfor %}
 				</div>
 			</div>
@@ -55,13 +55,6 @@ Shop
 					<div class="field">
 						<span>Max</span>
 						<input type="number" class="input-max" value="10000">
-					</div>
-				</div>
-				<div class="slider">
-					<div class="progress"></div>
-					<div class="range-input">
-						<input type="range" class="range-min" min="0" max="10000" value="0">
-						<input type="range" class="range-max" min="0" max="10000" value="10000">
 					</div>
 				</div>
 			</div>

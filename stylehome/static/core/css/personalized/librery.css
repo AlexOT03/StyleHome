@@ -601,57 +601,6 @@ input[type="number"]::-webkit-outer-spin-button {
     -moz-appearance: none;
 }
 
-.slider {
-    margin: 10px auto;
-    position: relative;
-    height: 5px;
-    padding: 10px 0;
-    border-radius: 5px;
-    background-color: #ddd;
-}
-
-.slider .progress {
-    position: absolute;
-    height: 5px;
-    border-radius: 5px;
-    left: 0%;
-    right: 0%;
-    background-color: #000;
-}
-
-.range-input {
-    position: relative;
-}
-
-.range-input input {
-    position: absolute;
-    top: -5px;
-    height: 5px;
-    width: 100%;
-    pointer-events: none;
-    background: none;
-    -webkit-appearance: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    height: 17px;
-    width: 17px;
-    border-radius: 50%;
-    pointer-events: auto;
-    -webkit-appearance: none;
-    background-color: #000;
-}
-
-input[type=range]::-moz-range-thumb {
-    height: 17px;
-    width: 17px;
-    border-radius: 50%;
-    pointer-events: auto;
-    border: none;
-    -moz-appearance: none;
-    background-color: #000;
-}
-
 .color-options {
     display: flex;
     flex-wrap: wrap;
