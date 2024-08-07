@@ -58,16 +58,21 @@ Shop
               <div class="col-md-4 col-6 mb-3">
                 <label class="mb-2 d-block">Cantidad</label>
                 <div class="input-group mb-3" style="width: 170px;">
-                  <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark">
+
+                  <button class="btn btn-white border border-secondary px-3" type="button" id="minus" data-mdb-ripple-color="dark">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <input type="text" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                  <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark">
+
+                  <input type="text" name="units" id="units" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1" value="1">
+
+                  <button class="btn btn-white border border-secondary px-3" type="button" id="plus" data-mdb-ripple-color="dark">
                     <i class="fas fa-plus"></i>
                   </button>
+
                 </div>
               </div>
             </div>
+
             <a href="#" class="btn btn-warning shadow-0"> Buy now </a>
             <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
             
@@ -111,3 +116,21 @@ Shop
 {% include 'layout/footer.html' %}
 
 {% endblock content %}
+
+{% block inline_javascript %}
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#minus").click(function(){
+      var units = parseInt($("#units").val());
+      if(units > 1){
+        $("#units").val(units-1);
+      }
+    });
+    $("#plus").click(function(){
+      var units = parseInt($("#units").val());
+      $("#units").val(units+1);
+    });
+  });
+
+</script>
+{% endblock inline_javascript %}

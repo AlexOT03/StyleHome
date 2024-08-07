@@ -112,7 +112,7 @@
 				const toUrl = new URL(event.destination.url);
 	
 				// Allow full page loads for specific routes like login redirections
-				if (location.origin !== toUrl.origin || toUrl.pathname.startsWith('/login') || toUrl.pathname.startsWith('/register')) return;
+				if (location.origin !== toUrl.origin || toUrl.pathname.startsWith('/login') || toUrl.pathname.startsWith('/register') || toUrl.pathname.startsWith('/shop/produc')) return;
 	
 				event.intercept({
 					async handler () {
