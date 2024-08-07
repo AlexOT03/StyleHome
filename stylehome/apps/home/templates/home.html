@@ -7,6 +7,24 @@ Home
 {% endblock title %}
 
 {% block content %}
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+       emailjs.init("SxNpkTHnn9ytDYeS2"); // Reemplaza con tu ID de usuario de EmailJS
+    })();
+    
+    function sendEmail(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_q2sut59', 'template_rto047j', '#suscripcion-form')
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert("Message sent successfully!");
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert("Failed to send the message.");
+        });
+    }
+  </script>
 <!-- Start Hero Section -->
 <div class="hero">
 	<div class="line"></div>
@@ -19,7 +37,7 @@ Home
 			</div>
 			<div class="col-lg-5">
 				<div class="intro-excerpt">
-					<h1>HOT DEALS THIS WEEK<span class="d-block colorfont"><h2 class="font30">HotSale 50%</h2>
+					<h1>LOS MEJORES PRECIOS<span class="d-block colorfont"><h2 class="font30">SOLO PARA TI</h2>
 						MODERN FURNITURE</span></h1>
 					<p>
 						<a href="#" class="btn btn-white-outline">Ver ahora</a>
@@ -158,9 +176,9 @@ Home
 				<span>Suscríbete a nuestra familia para conocer más promociones</span>
 			</div>
 			<div class="col-12 col-sm-6">
-				<form action="#" class="row">
+				<form class="row" id="suscripcion-form" onsubmit="sendEmail(event)">
 					<div class="col-12 col-sm-10  p-0 m-0">
-						<input type="email" class="form-control" placeholder="Compártenos tu email">
+						<input type="email" class="form-control" placeholder="Compártenos tu email" name="from_email">
 					</div>
 					<div class="col-12 col-sm-2  p-0 m-0">
 						<button class="btn btn-primary">
