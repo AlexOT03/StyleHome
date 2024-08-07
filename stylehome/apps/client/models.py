@@ -33,6 +33,12 @@ class User(models.Model):
     address = models.CharField(max_length=100, blank=True, null=True)
     phone = models.CharField(max_length=15, validators=[RegexValidator(r"^\+?1?\d{9,15}$")], blank=True, null=True)
     photo = models.ImageField(null=True, blank=True, upload_to='profiles/')
+    password = models.CharField(max_length=128, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        # Encriptar la contraseña antes de guardar
+        self.password = make_password(self.password)
+        super(User, self).save(*args, **kwargs)
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -53,7 +59,15 @@ class Supplier(models.Model):
     
     def __str__(self):
         return f"{self.company} (ID: {self.user_id.first_name})"
+    
 
+class Supplies(models.Model):
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+    tipo_insumo = models.CharField(max_length=100)
+    costo = models.FloatField()
+    unidades = models.IntegerField()
+    descripcion = models.TextField(blank=True, null=True)
+    
 @receiver(post_save, sender=User)
 def create_related_model(sender, instance, created, **kwargs):
     if created:
