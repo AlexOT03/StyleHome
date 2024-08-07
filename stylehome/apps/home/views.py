@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from stylehome.apps.shop.models import Category
 
 # Create your views here.
 class HomeView(TemplateView):
@@ -7,4 +8,6 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        categories = Category.objects.all()[:4]
+        context['categories'] = categories
         return context
