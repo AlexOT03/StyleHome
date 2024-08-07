@@ -574,6 +574,10 @@ a {
   .blog-section .post-entry:hover .post-thumbnail img, .blog-section .post-entry:focus .post-thumbnail img {
     opacity: .7; }
 
+  .subscription-form{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    }
 .footer-section {
   background-color: #8BA6AC; }
   .footer-section .relative {
