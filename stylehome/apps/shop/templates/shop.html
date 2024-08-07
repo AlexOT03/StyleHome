@@ -89,60 +89,22 @@ Shop
 	<article>
 		<h2 class="mb-5">Dormitorio</h2>
 		<div class="row">
+			{% for product in products %}
 			<div class="col-12 col-md-4 col-lg-3 mb-3">
-				<a href="" class="product-item">
-					<img src="{% static 'images/product-3.png' %}" alt="">
+				<a href="{% url 'product' product.id %}" class="product-item" style="view-transition-name: product-{{ product.id }};">
+					{% if product.image %}
+						<img src="{{ product.image.url }}" alt="{{ product.name }}]">
+					{% else %}
+						<img src="{% static 'images/product-3.png' %}" alt="">
+					{% endif %}
 					<div class="info pt-3">
-						<h4>Product Name</h4>
-						<span>colors</span>
-						<p>$10.00</p>
+						<h4>{{ product.name }}</h4>
+						<span>{{ product.color_id.name }}</span>
+						<p>${{ product.price }}</p>
 					</div>
 				</a>
 			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-3">
-				<a href="" class="product-item">
-					<img src="{% static 'images/product-3.png' %}" alt="">
-					<div class="info pt-3">
-						<h4>Product Name</h4>
-						<span>colors</span>
-						<p>$10.00</p>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-3">
-				<a href="" class="product-item">
-					<img src="{% static 'images/product-3.png' %}" alt="">
-					<div class="info pt-3">
-						<h4>Product Name</h4>
-						<span>colors</span>
-						<p>$10.00</p>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-3">
-				<a href="" class="product-item">
-					<img src="{% static 'images/product-3.png' %}" alt="">
-					<div class="info pt-3">
-						<h4>Product Name</h4>
-						<span>colors</span>
-						<p>$10.00</p>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-3">
-				<a href="" class="product-item">
-					<img src="{% static 'images/product-3.png' %}" alt="">
-					<div class="info pt-3">
-						<h4>Product Name</h4>
-						<span>colors</span>
-						<p>$10.00</p>
-					</div>
-				</a>
-			</div>
+			{% endfor %}
 
 			<div class="col-12 text-center">
 				<a href="#" class="btn-black-outline">cargar mas</a>
