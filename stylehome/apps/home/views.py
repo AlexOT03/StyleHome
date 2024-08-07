@@ -8,6 +8,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        categories = Category.objects.all()[:4]
-        context['categories'] = categories
+        categories_big = Category.objects.all().order_by('name')[4:]
+        categories_small = Category.objects.all().order_by('name')[:4]
+        context['categories_big'] = categories_big
+        context['categories_small'] = categories_small
         return context

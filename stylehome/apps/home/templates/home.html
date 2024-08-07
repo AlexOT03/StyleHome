@@ -51,19 +51,25 @@ Home
 <!-- End Hero Section -->
 
 <section class="content-category">
-	<div class="card-category">
-		<img src="{% static 'images/post-1.jpg' %}" alt="Imagen de la categoría 1">
-		<div class="float-text">
-			<h3>Silla vintage</h3>
-			<a href="#" class="btn-black-outline">Inspeccionar</a>
+	{% for category in categories_big %}
+		<div class="card-category">
+			{% if category.image %}
+				<img src="{{ category.image.url }}" alt="Imagen de la categoría 1">
+			{% else %}
+				<img src="{% static 'images/post-1.jpg' %}" alt="Imagen de la categoría 1">
+			{% endif %}
+			<div class="float-text">
+				<h3>{{ category.name }}</h3>
+				<a href="{% url 'shop_with_category' category.id %}" class="btn-black-outline">Inspeccionar</a>
+			</div>
 		</div>
-	</div>
+	{% endfor %}
 
 	<div class="card-category">
 		<img src="{% static 'images/post-1.jpg' %}" alt="Imagen de la categoría 2">
 		<div class="float-text">
-			<h3>Jarrones de cerámica</h3>
-			<a href="#" class="btn-black-outline">Inspeccionar</a>
+			<h3>Conoce todos los productos</h3>
+			<a href="{% url 'shop' %}" class="btn-black-outline">Inspeccionar</a>
 		</div>
 	</div>
 </section>
@@ -71,7 +77,7 @@ Home
 <!-- Start Product Section -->
 <section class="product-section">
 		<div class="row justify-content-between">
-			{% for category in categories %}
+			{% for category in categories_small %}
 				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
 					<div class="card-item">
 						<div class="face front">
@@ -107,7 +113,7 @@ Home
 			<p><h3>Vestidores de cama</h3></p>
 			<span class="fs-4"><strong>$150.00</strong></span><span class="fs-6 ms-4">$220.00</span>
 			<p>Mejores modelos y detalles en los mejores precios</p>
-			<a href="#">Ver detalles</a>
+			<a href="{% url 'product' 31 %}">Ver detalles</a>
 		</div>
 	</article>
 </section>
