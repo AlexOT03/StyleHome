@@ -8,178 +8,148 @@ Shop
 
 {% block content %}
 
-<div class="untree_co-section product-section before-footer-section">
-	<div class="content-products">
-		<div class="search">
-			<div class="head-search">
-				<h3>Busca lo que deseas</h3>
-			</div>
-			<div class="content-forms">
-				<form action="" method="post" class="search-form">
-				  <div class="first-section">
-					<h4>¿Cuál color?</h4>
-					<div class="items-colors">
-					  <input type="checkbox" id="red" name="color" value="rojo">
-					  <label for="red" class="color-label" style="background-color: red;"></label>
-			  
-					  <input type="checkbox" id="blue" name="color" value="azul">
-					  <label for="blue" class="color-label" style="background-color: blue;"></label>
-			  
-					  <input type="checkbox" id="mahogany" name="color" value="caoba">
-					  <label for="mahogany" class="color-label" style="background-color: #C04000;"></label>
-			  
-					  <input type="checkbox" id="brown" name="color" value="cafe">
-					  <label for="brown" class="color-label" style="background-color: brown;"></label>
-					</div>
-				  </div>
-				  <div class="second-section">
-					<h4>¿Cuál categoría?</h4>
-					<div class="items-category">
-					  <div class="item-cat">
-						<input type="checkbox" id="sala" name="category" value="sala">
-					  	<label for="sala" class="category-label">Sala</label>
-					  </div>
-			  
-					  <div class="item-cat">
-						<input type="checkbox" id="Comedor" name="category" value="Comedor">
-					  	<label for="Comedor" class="category-label">Comedor</label>
-					  </div>
-			  
-					  <div class="item-cat">
-						<input type="checkbox" id="cocina" name="category" value="cocina">
-					  	<label for="cocina" class="category-label">cocina</label>
-					  </div>
-			  
-					  <div class="item-cat">
-						<input type="checkbox" id="Habitacion" name="category" value="Habitacion">
-					  	<label for="Habitacion" class="category-label">Habitacion</label>
-					  </div>
-					</div>
-				  </div>
-				</form>
-			  </div>
-			  
-			  
+<section class="gird-section">
+	<aside class="col">
+		<div class="options">
+			<span><strong>Categorías</strong></span>
+			<ul>
+				<li>
+					Dormitorio
+					<ul>
+						<li>Duvet Cover Set</li>
+						<li>Hojas</li>
+						<li>Mantas</li>
+						<li>Cutains</li>
+						<li>Rugs</li>
+					</ul>
+				</li>
+				<li>Sala</li>
+				<li>Cuarto de niño</li>
+				<li>Baño</li>
+				<li>Exterior</li>
+			</ul>
 		</div>
-
-		<div class="list-product">
-
-			<!-- Start Column 1 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<div class="product-item">
-					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Nordic Chair</h3>
-					<strong class="product-price">$50.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</div>
+		<div class="options">
+			<span><strong>Color</strong></span>
+			<!-- <div class="color-selector">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+				<input type="checkbox" name="" id="">
+			</div> -->
+			<div class="color-options">
+				<div class="color-box" style="background-color: #FF0000;"></div>
+				<div class="color-box" style="background-color: #00FF00;"></div>
+				<div class="color-box" style="background-color: #0000FF;"></div>
+				<div class="color-box" style="background-color: #FFFF00;"></div>
+				<div class="color-box" style="background-color: #FF00FF;"></div>
+				<div class="color-box" style="background-color: #00FFFF;"></div>
+				<div class="color-box" style="background-color: #000000;"></div>
+				<div class="color-box" style="background-color: #FFFFFF;"></div>
+				<div class="color-box" style="background-color: #808080;"></div>
+				<div class="color-box" style="background-color: #FFA500;"></div>
 			</div>
-			<!-- End Column 1 -->
-
-			<!-- Start Column 2 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-1.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Nordic Chair</h3>
-					<strong class="product-price">$50.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 2 -->
-
-			<!-- Start Column 3 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-2.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Kruzo Aero Chair</h3>
-					<strong class="product-price">$78.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 3 -->
-
-			<!-- Start Column 4 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Ergonomic Chair</h3>
-					<strong class="product-price">$43.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 4 -->
-
-
-			<!-- Start Column 1 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Nordic Chair</h3>
-					<strong class="product-price">$50.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 1 -->
-
-			<!-- Start Column 2 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-1.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Nordic Chair</h3>
-					<strong class="product-price">$50.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 2 -->
-
-			<!-- Start Column 3 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-2.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Kruzo Aero Chair</h3>
-					<strong class="product-price">$78.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 3 -->
-
-			<!-- Start Column 4 -->
-			<div class="col-12 col-md-4 col-lg-2 mb-5 paddings">
-				<a class="product-item" href="#">
-					<img src="{% static 'images/product-3.png' %}" class="img-fluid product-thumbnail">
-					<h3 class="product-title paddings">Ergonomic Chair</h3>
-					<strong class="product-price">$43.00</strong>
-
-					<span class="icon-cross">
-						<img src="{% static 'images/cross.svg' %}" class="img-fluid">
-					</span>
-				</a>
-			</div>
-			<!-- End Column 4 -->
-
 		</div>
-	</div>
-</div>
+		<div class="options">
+			<span><strong>Precio</strong></span>
+			<div class="price-selector">
+				<label for="price-1">
+					<input type="checkbox" name="" id="price-1">
+					$0.00 - $10.00
+				</label>
+				<label for="price-2">
+					<input type="checkbox" name="" id="price-2">
+					$10.00 - $20.00
+				</label>
+				<label for="price-3">
+					<input type="checkbox" name="" id="price-3">
+					$20.00 - $30.00
+				</label>
+				<label for="price-4">
+					<input type="checkbox" name="" id="price-4">
+					$30.00 - $40.00
+				</label>
+				<label for="price-5">
+					<input type="checkbox" name="" id="price-5">
+					$40.00 - $50.00
+				</label>
+				<label for="price-6">
+					<input type="checkbox" name="" id="price-6">
+					$50.00 - $60.00
+				</label>
+			</div>
+		</div>
+	</aside>
+	<article>
+		<h2 class="mb-5">Dormitorio</h2>
+		<div class="row">
+			<div class="col-12 col-md-4 col-lg-3 mb-3">
+				<a href="" class="product-item">
+					<img src="{% static 'images/product-3.png' %}" alt="">
+					<div class="info pt-3">
+						<h4>Product Name</h4>
+						<span>colors</span>
+						<p>$10.00</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-12 col-md-4 col-lg-3 mb-3">
+				<a href="" class="product-item">
+					<img src="{% static 'images/product-3.png' %}" alt="">
+					<div class="info pt-3">
+						<h4>Product Name</h4>
+						<span>colors</span>
+						<p>$10.00</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-12 col-md-4 col-lg-3 mb-3">
+				<a href="" class="product-item">
+					<img src="{% static 'images/product-3.png' %}" alt="">
+					<div class="info pt-3">
+						<h4>Product Name</h4>
+						<span>colors</span>
+						<p>$10.00</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-12 col-md-4 col-lg-3 mb-3">
+				<a href="" class="product-item">
+					<img src="{% static 'images/product-3.png' %}" alt="">
+					<div class="info pt-3">
+						<h4>Product Name</h4>
+						<span>colors</span>
+						<p>$10.00</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-12 col-md-4 col-lg-3 mb-3">
+				<a href="" class="product-item">
+					<img src="{% static 'images/product-3.png' %}" alt="">
+					<div class="info pt-3">
+						<h4>Product Name</h4>
+						<span>colors</span>
+						<p>$10.00</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-12 text-center">
+				<a href="#" class="btn-black-outline">cargar mas</a>
+			</div>
+		</div>
+	</article>
+</section>
 {% include 'layout/footer.html' %}
 
 {% endblock content %}

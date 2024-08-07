@@ -433,7 +433,7 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 /**Diseño del template de shop.html */
 
 
-.content-products{
+/* .content-products{
     margin-top: -80px;
     width: 100%;
     display: flex;
@@ -480,9 +480,9 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     text-align: center;
     margin-bottom: 10px;
     background-color: #fafafa91;
-}
+} */
 
-.items-colors input[type="checkbox"] {
+/* .items-colors input[type="checkbox"] {
     display: none;
   }
   
@@ -517,10 +517,10 @@ Este archivo es para crear clases que modifique la estructura de los templates p
   }
   .items-category input[type="checkbox"]:checked + .category-label{
     color:red;
-  }
+  } */
 
 
-.content-products .list-product{
+/* .content-products .list-product{
     width: 75%;
     height: auto;
     margin: auto;
@@ -530,8 +530,61 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 }.content-products .list-product .paddings{
     margin-right: 5px;
     padding-top: 15px;
+} */
+
+/* .subscription-form {
+    padding: 50px 62px;
+} */
+
+.gird-section {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 50px;
+    padding: 7rem 80px;
+    margin: 0 auto;
 }
 
-.subscription-form {
-    padding: 50px 62px;
+/* .color-selector {
+    display: flex;
+    width: 100% !important;
+    flex-wrap: wrap;
+    width: max-content;
+}
+
+.color-selector input[type="checkbox"] {
+    margin: 5px;
+} */
+
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: #8BA6AC solid 1px;
+    border-radius: 5px;
+}
+
+.product-item {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform .2s;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background-color: #EAE9E7;
+}
+
+.product-item:hover {
+    transform: scale(1.1);
 }
