@@ -6,88 +6,76 @@
 Shop
 {% endblock title %}
 
+{% block extra_scripts %}
+
+{% endblock extra_scripts %}
+
 {% block content %}
 
 <section class="gird-section">
 	<aside class="col">
-		<div class="options">
-			<span><strong>Categorías</strong></span>
-			<ul>
-				<li>
-					Dormitorio
-					<ul>
-						<li>Duvet Cover Set</li>
-						<li>Hojas</li>
-						<li>Mantas</li>
-						<li>Cutains</li>
-						<li>Rugs</li>
-					</ul>
-				</li>
-				<li>Sala</li>
-				<li>Cuarto de niño</li>
-				<li>Baño</li>
-				<li>Exterior</li>
-			</ul>
-		</div>
-		<div class="options">
-			<span><strong>Color</strong></span>
-			<!-- <div class="color-selector">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-				<input type="checkbox" name="" id="">
-			</div> -->
-			<div class="color-options">
-				<div class="color-box" style="background-color: #FF0000;"></div>
-				<div class="color-box" style="background-color: #00FF00;"></div>
-				<div class="color-box" style="background-color: #0000FF;"></div>
-				<div class="color-box" style="background-color: #FFFF00;"></div>
-				<div class="color-box" style="background-color: #FF00FF;"></div>
-				<div class="color-box" style="background-color: #00FFFF;"></div>
-				<div class="color-box" style="background-color: #000000;"></div>
-				<div class="color-box" style="background-color: #FFFFFF;"></div>
-				<div class="color-box" style="background-color: #808080;"></div>
-				<div class="color-box" style="background-color: #FFA500;"></div>
+		<form id="filtersForm">
+			<div>
+				<span><strong>Categorías</strong></span>
+				<ul class="category-list">
+					<li class="category-list-item">
+						<input type="radio" name="category_id" id="id-radio-all" value="all" {% if not selected_category %} checked {% endif %}>
+						<label for="id-radio-all">
+							Todos los productos
+						</label>
+					</li>
+					{% for category in categories %}
+						<li class="category-list-item">
+							<input type="radio" name="category_id" id="id-radio-{{ category.id }}" value="{{ category.id }}" {% if selected_category and category.id == selected_category.id %} checked {% endif %}>
+							<label for="id-radio-{{ category.id }}">
+								{{ category.name }}
+							</label>
+						</li>
+					{% endfor %}
+				</ul>
 			</div>
-		</div>
-		<div class="options">
-			<span><strong>Precio</strong></span>
-			<div class="price-selector">
-				<label for="price-1">
-					<input type="checkbox" name="" id="price-1">
-					$0.00 - $10.00
-				</label>
-				<label for="price-2">
-					<input type="checkbox" name="" id="price-2">
-					$10.00 - $20.00
-				</label>
-				<label for="price-3">
-					<input type="checkbox" name="" id="price-3">
-					$20.00 - $30.00
-				</label>
-				<label for="price-4">
-					<input type="checkbox" name="" id="price-4">
-					$30.00 - $40.00
-				</label>
-				<label for="price-5">
-					<input type="checkbox" name="" id="price-5">
-					$40.00 - $50.00
-				</label>
-				<label for="price-6">
-					<input type="checkbox" name="" id="price-6">
-					$50.00 - $60.00
-				</label>
+			<div>
+				<span><strong>Color</strong></span>
+				<div class="color-options">
+					{% for color in colors %}
+						<div class="color-box" style="background-color: {{ color.name }};"></div>
+					{% endfor %}
+				</div>
 			</div>
-		</div>
+			<div class="wrapper">
+				<span><strong>Rango de precios</strong></span>
+				<div class="price-input">
+					<div class="field">
+						<span>Min</span>
+						<input type="number" class="input-min" value="0">
+					</div>
+					<div class="separator">
+						-
+					</div>
+					<div class="field">
+						<span>Max</span>
+						<input type="number" class="input-max" value="10000">
+					</div>
+				</div>
+				<div class="slider">
+					<div class="progress"></div>
+					<div class="range-input">
+						<input type="range" class="range-min" min="0" max="10000" value="0">
+						<input type="range" class="range-max" min="0" max="10000" value="10000">
+					</div>
+				</div>
+			</div>
+			<input type="submit" value="Filtrar">
+		</form>
 	</aside>
 	<article>
-		<h2 class="mb-5">Dormitorio</h2>
+		<h2 class="mb-5">
+			{% if selected_category %}
+				{{ selected_category }}
+			{% else %}
+				Todos los productos
+			{% endif %}
+		</h2>
 		<div class="row">
 			{% for product in products %}
 			<div class="col-12 col-md-4 col-lg-3 mb-3">
@@ -115,3 +103,50 @@ Shop
 {% include 'layout/footer.html' %}
 
 {% endblock content %}
+
+{% block inline_javascript %}
+<script>
+	const rangeInput = document.querySelectorAll('.range-input input'),
+	priceInput = document.querySelectorAll('.price-input input');
+	const progress = document.querySelector('.slider .progress');
+	let priceGap = 1000
+
+	priceInput.forEach(input => {
+		input.addEventListener('input', e => {
+			let minValue = parseInt(priceInput[0].value),
+			maxValue = parseInt(priceInput[1].value);
+
+			if (maxValue - minValue >= priceGap) {
+				if (e.target.className === 'input-min') {
+					rangeInput[0].value = minValue;
+					progress.style.left = (minValue / rangeInput[0].max) * 100 + '%';
+				} else {
+					rangeInput[1].value = maxValue;
+					progress.style.right = 100 -(maxValue / rangeInput[1].max) * 100 + '%';
+				}
+			}
+		})
+	});
+
+	rangeInput.forEach(input => {
+		input.addEventListener('input', e => {
+			let minValue = parseInt(rangeInput[0].value),
+			maxValue = parseInt(rangeInput[1].value);
+
+			if (maxValue - minValue < priceGap) {
+				if (e.target.className === 'range-min') {
+					rangeInput[0].value = maxValue - priceGap;
+				} else {
+					rangeInput[1].value = minValue + priceGap;
+				}
+			}
+			else {
+				priceInput[0].value = minValue;
+				priceInput[1].value = maxValue;
+				progress.style.left = (minValue / rangeInput[0].max) * 100 + '%';
+				progress.style.right = 100 -(maxValue / rangeInput[1].max) * 100 + '%';
+			}
+		})
+	});
+</script>
+{% endblock inline_javascript %}

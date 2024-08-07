@@ -554,6 +554,103 @@ Este archivo es para crear clases que modifique la estructura de los templates p
 .color-selector input[type="checkbox"] {
     margin: 5px;
 } */
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 16px auto;
+    padding: 10px 0;
+}
+
+.price-input {
+    display: flex;
+    width: 100%;
+}
+
+.price-input .field {
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-input .separator {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #999;
+    -moz-appearance: none;
+}
+
+.slider {
+    margin: 10px auto;
+    position: relative;
+    height: 5px;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+.slider .progress {
+    position: absolute;
+    height: 5px;
+    border-radius: 5px;
+    left: 0%;
+    right: 0%;
+    background-color: #000;
+}
+
+.range-input {
+    position: relative;
+}
+
+.range-input input {
+    position: absolute;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    pointer-events: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background-color: #000;
+}
+
+input[type=range]::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    border: none;
+    -moz-appearance: none;
+    background-color: #000;
+}
 
 .color-options {
     display: flex;
@@ -583,6 +680,8 @@ Este archivo es para crear clases que modifique la estructura de los templates p
     height: auto;
     padding: 10px;
     background-color: #EAE9E7;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .product-item:hover {

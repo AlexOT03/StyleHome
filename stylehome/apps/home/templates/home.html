@@ -71,86 +71,30 @@ Home
 <!-- Start Product Section -->
 <section class="product-section">
 		<div class="row justify-content-between">
-
 			{% for category in categories %}
-			<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-				<div class="card-item">
-					<div class="face front">
-						<img src="{{ category.image.url }}" alt="">
-						<div class="card-data">
-							<h3 class="text-black">{{ category.name }}</h3>
-							<strong class="product-price text-black">{{ category.price }}</strong> 
+				<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+					<div class="card-item">
+						<div class="face front">
+							{% if category.image %}
+								<img src="{{ category.image.url }}" alt="">
+							{% else %}
+								<img src="{% static 'images/product-3.png' %}" alt="">
+							{% endif %}
+							<div class="card-data">
+								<h3 class="text-black">{{ category.name }}</h3>
+								<strong class="product-price text-black">{{ category.price }}</strong> 
+							</div>
 						</div>
-					</div>
-					<div class="face back">
-						<h3>{{ category.name }}</h3>
-						<p>{{ category.description }}</p>
-						<div class="card-link">
-							<a href="#">Ver todos</a>
+						<div class="face back">
+							<h3>{{ category.name }}</h3>
+							<p>{{ category.description }}</p>
+							<div class="card-link">
+								<a href="{% url 'shop_with_category' category.id %}">Ver todos</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			{% endfor %}
-
-			<!----
-			<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-				<div class="card-item">
-					<div class="face front">
-						<img src="{% static 'images/product-3.png' %}" alt="">
-						<div class="card-data">
-							<h3 class="text-black">Silla Ergonómica</h3>
-							<strong class="product-price text-black">$30.00</strong>
-						</div>
-					</div>
-					<div class="face back">
-						<h3>Silla Ergonómica</h3>
-						<p>Este y mas se pueden encontrar en nuestra tienda, consulte cada el catalogo</p>
-						<div class="card-link">
-							<a href="#">Ver todos</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-				<div class="card-item">
-					<div class="face front">
-						<img src="{% static 'images/product-3.png' %}" alt="">
-						<div class="card-data">
-							<h3 class="text-black">Silla Ergonómica</h3>
-							<strong class="product-price text-black">$30.00</strong>
-						</div>
-					</div>
-					<div class="face back">
-						<h3>Silla Ergonómica</h3>
-						<p>Este y mas se pueden encontrar en nuestra tienda, consulte cada el catalogo</p>
-						<div class="card-link">
-							<a href="#">Ver todos</a>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-				<div class="card-item">
-					<div class="face front">
-						<img src="{% static 'images/product-3.png' %}" alt="">
-						<div class="card-data">
-							<h3 class="text-black">Silla Ergonómica</h3>
-							<strong class="product-price text-black">$30.00</strong>
-						</div>
-					</div>
-					<div class="face back">
-						<h3>Silla Ergonómica</h3>
-						<p>Este y mas se pueden encontrar en nuestra tienda, consulte cada el catalogo</p>
-						<div class="card-link">
-							<a href="#">Ver todos</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			--->
 		</div>
 </section>
 <!-- End Product Section -->

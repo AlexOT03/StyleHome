@@ -13,10 +13,12 @@ Shop
       <div class="row gx-5">
         <aside class="col-lg-6">
           <div class="border rounded-4 mb-3 d-flex justify-content-center">
-            <img style="max-width: 100%; max-height: 100vh; margin: auto; view-transition-name: product-{{ product.id }};" class="rounded-4 fit" src="{{ product.image.url }}">
-          </div>
-          <!-- thumbs-wrap.// -->
-          <!-- gallery-wrap .end// -->
+            {% if product.image %}
+              <img style="max-width: 100%; max-height: 100vh; margin: auto; aspect-ratio: 1/1; object-fit: cover; view-transition-name: product-{{ product.id }};" class="rounded-4 fit" src="{{ product.image.url }}">
+            {% else %}
+              <img style="max-width: 100%; max-height: 100vh; margin: auto; aspect-ratio: 1/1; object-fit: cover; view-transition-name: product-{{ product.id }};" class="rounded-4 fit" src="{% static 'images/product-3.png' %}">
+            {% endif %}
+            </div>
         </aside>
         <main class="col-lg-6">
           <div class="ps-lg-3">
@@ -53,7 +55,6 @@ Shop
             <hr>
   
             <div class="row mb-4">
-              <!-- col.// -->
               <div class="col-md-4 col-6 mb-3">
                 <label class="mb-2 d-block">Cantidad</label>
                 <div class="input-group mb-3" style="width: 170px;">
@@ -89,7 +90,7 @@ Shop
                 {% for similar_product in similar_products %}
                     <div class="d-flex mb-3">
                       <a href="{% url 'product' similar_product.id %}" class="me-3">
-                        <img src="{{ similar_product.image.url }}" style="min-width: 96px; height: 96px; view-transition-name: product-{{ similar_product.id }};" class="img-md img-thumbnail">
+                        <img src="{{ similar_product.image.url }}" style="min-width: 96px; height: 96px; aspect-ratio: 1/1; object-fit: cover; view-transition-name: product-{{ similar_product.id }};" class="img-md img-thumbnail">
                       </a>
                       <div class="info">
                         <a href="#" class="nav-link mb-1">
