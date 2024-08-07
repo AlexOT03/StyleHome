@@ -12,23 +12,23 @@ class LoginView(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
     
-def post(request):
-    print("post")
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        print(email, password)
-    
-        if email and password:
-            try:
-                user = User.objects.get(email=email, password=password)
-                request.session['user_id'] = user.id
-                messages.success(request, 'Login successful')
-                return redirect('profile')
-            except user.DoesNotExist:
-                messages.error(request, 'Invalid email or password')
-    
-    return render(request, 'login.html')
+    def post(self, request):
+        print("post")
+        if request.method == 'POST':
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            print(email, password)
+
+            if email and password:
+                try:
+                    user = User.objects.get(email=email, password=password)
+                    request.session['user_id'] = user.id
+                    messages.success(request, 'Login successful')
+                    return redirect('profile')
+                except user.DoesNotExist:
+                    messages.error(request, 'Invalid email or password')
+            else:
+                return render(request, 'login.html')
     
 
 class RegisterView(TemplateView):
