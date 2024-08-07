@@ -24,55 +24,41 @@ Cart
               </tr>
             </thead>
             <tbody>
+              {% for product in products %}
               <tr>
                 <td class="product-thumbnail">
-                  <img src="images/product-1.png" alt="Image" class="img-fluid">
+                  {% if product.product_id.image %}
+                    <img src="{{ product.product_id.image.url }}" alt="Image" class="img-fluid">
+                  {% else %}
+                    <img src="images/product-1.png" alt="Image" class="img-fluid">
+                  {% endif %}
                 </td>
                 <td class="product-name">
-                  <h2 class="h5 text-black">Product 1</h2>
+                  <h2 class="h5 text-black">{{ product.product_id.name }}</h2>
                 </td>
-                <td>$49.00</td>
+                <td id="product-price">${{ product.product_id.price }}</td>
                 <td>
-                  <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                    <div class="input-group-prepend">
-                      <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                    </div>
-                    <input type="text" class="form-control text-center quantity-amount" value="1" placeholder=""
-                      aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                  <div class="col-md-4 col-6 mb-3">
+                    <div class="input-group mb-3" style="width: 170px;">
+    
+                      <button class="btn btn-white border border-secondary px-3" type="button" id="minus" data-mdb-ripple-color="dark">
+                        <i class="fas fa-minus"></i>
+                      </button>
+    
+                      <input type="number" name="units" id="units" class="form-control text-center border border-secondary" placeholder="14" aria-label="Example text with button addon" aria-describedby="button-addon1" value="1">
+    
+                      <button class="btn btn-white border border-secondary px-3" type="button" id="plus" data-mdb-ripple-color="dark">
+                        <i class="fas fa-plus"></i>
+                      </button>
+    
                     </div>
                   </div>
 
                 </td>
-                <td>$49.00</td>
-                <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                <td id="total-price">${{ product.product_id.price }}</td>	
+                <td><a href="{% url 'delete-cart' product.id %}" class="btn btn-black btn-sm">X</a></td>
               </tr>
-
-              <tr>
-                <td class="product-thumbnail">
-                  <img src="images/product-2.png" alt="Image" class="img-fluid">
-                </td>
-                <td class="product-name">
-                  <h2 class="h5 text-black">Product 2</h2>
-                </td>
-                <td>$49.00</td>
-                <td>
-                  <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                    <div class="input-group-prepend">
-                      <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                    </div>
-                    <input type="text" class="form-control text-center quantity-amount" value="1" placeholder=""
-                      aria-label="Example text with button addon" aria-describedby="button-addon1">
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                    </div>
-                  </div>
-
-                </td>
-                <td>$49.00</td>
-                <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>
@@ -130,3 +116,39 @@ Cart
 {% include 'layout/footer.html' %}
 
 {% endblock content %}
+
+{% block inline_javascript %}
+<script type="text/javascript">
+  $(document).ready(function(){
+      function updateTotalPrice() {
+        var units = $('#units').val();
+        console.log("Units changed: ", units);
+        
+        let priceText = $("#product-price").text().replace(/[^\d.-]/g, '');
+        let price = parseFloat(priceText);
+        let total = price * units;
+        
+        $("#total-price").text("$" + total.toFixed(2));
+      }
+
+      $("#minus").click(function(){
+        var units = parseInt($("#units").val());
+        console.log("Units decreased: ", units);
+        if(units > 1){
+          $("#units").val(units-1).trigger('change');
+        }
+      });
+
+      $("#plus").click(function(){
+        var units = parseInt($("#units").val());
+        console.log("Units increased: ", units);
+        $("#units").val(units+1).trigger('change');
+      });
+
+      $("#units").on("change", function(){
+        updateTotalPrice();
+      });
+    });
+
+</script>
+{% endblock inline_javascript %}
