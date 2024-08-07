@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class Category(models.Model):
@@ -11,6 +12,15 @@ class Category(models.Model):
 
 class Color(models.Model):
     name = models.CharField(max_length=100)
+    hex_code = models.CharField(
+        max_length=7,
+        validators=[
+            RegexValidator(
+                regex=r'^#[0-9A-Fa-f]{6}$',
+                message='El código hexadecimal debe estar en el formato #RRGGBB.'
+            )
+        ]
+    )
     
     def __str__(self):
         return self.name
