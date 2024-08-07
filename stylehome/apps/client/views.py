@@ -9,6 +9,15 @@ class LoginView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+    
+
+class RegisterView(TemplateView):
+    """ Register page view """
+    template_name = 'register.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 class ProfileView(TemplateView):
     """ profile page view """
