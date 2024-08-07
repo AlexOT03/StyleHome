@@ -34,11 +34,6 @@ class User(models.Model):
     phone = models.CharField(max_length=15, validators=[RegexValidator(r"^\+?1?\d{9,15}$")], blank=True, null=True)
     photo = models.ImageField(null=True, blank=True, upload_to='profiles/')
     password = models.CharField(max_length=128, null=True, blank=True)
-
-    def save(self, *args, **kwargs):
-        # Encriptar la contraseña antes de guardar
-        self.password = make_password(self.password)
-        super(User, self).save(*args, **kwargs)
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
